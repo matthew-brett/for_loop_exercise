@@ -1,5 +1,5 @@
 ---
-title: "Vector exercises"
+title: "For loops - for real"
 output: html_notebook
 ---
 
