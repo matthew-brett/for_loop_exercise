@@ -1,0 +1,157 @@
+---
+title: "Vector exercises"
+output: html_notebook
+---
+
+# For loop exercises
+
+Here is your template for a `for` loop.  This is a loop to repeat something `n` times (where `n` is a variable).  Let's say we want to repeat something 10 times.  We first set `n` to 10, then do our `for` loop, like this:
+
+```{r}
+n <- 10
+for (i in 1:n) {
+  # The thing you want to repeat
+}
+```
+
+You may remember you can print a number (or anything else) with the `print` function, like this:
+
+```{r}
+print(5)
+```
+
+Use a `for` loop to print out all the numbers from 1 through 6, one number on each line.  Fill in the `...` parts, and the loop body, after the comment.
+
+```{r}
+for ( ... in ... ) {
+  # The body of the loop
+  ...
+}
+```
+
+Use a `for` loop to print out all the numbers from 3 through 13, one number on each line.  Fill in the `...` parts, and the loop body, after the comment.
+
+
+```{r}
+for ( ... in ... ) {
+  # The body of the loop
+  ...
+}
+```
+
+One way of keeping a running total, is to set a variable to be itself, plus another number.  For example, to add the values 3, 5 and 7 together, we could do:
+
+```{r}
+my_var <- 0
+my_var <- my_var + 3
+my_var <- my_var + 5
+my_var <- my_var + 7
+my_var
+```
+
+Use a `for` loop to add all the numbers 5 through 20.   Show the result at the end:
+
+```{r}
+total <- 0
+for ( ... in ...) {
+  # The body of the loop
+  ...
+}
+# Show the result
+total
+```
+
+You should get the same result as:
+
+```{r}
+sum(5:20)
+```
+
+Here is the code to make a vector of 1000 random numbers between 0 and 1.
+
+```{r}
+# Make the vector, store it in the "r" variable
+r <- runif(1000)
+# Show the first six values
+head(r)
+```
+
+Show a histogram of 1000 random numbers between 0 and 1.
+
+```{r}
+hist(...)
+```
+
+Here is the sum of 50 random numbers:
+
+```{r}
+sum(runif(50))
+```
+
+In the chunk below, you start with a vector of 1000 zeros.  Use a for loop to replace each zero in the vector with the sum of a fresh set of 50 random numbers.   Show a histogram of the values
+
+```{r}
+# A vector of 1000 zeros
+sum_of_50 <- numeric(1000)
+for ( ... in ...) {
+  sum_of_50[...] <- ...
+}
+hist(sum_of_50)
+```
+
+If you were surprised by the shape of the result, well done, you have just demonstrated the [Central Limit Theorem](https://en.wikipedia.org/wiki/Central_limit_theorem).  When you add random numbers, whatever their distribution, the distribution of the result tends to get closer to the normal distribution.
+
+Here is how you get the maximum value from a vector:
+
+```{r}
+values <- c(3, 1, 4, 1, 5, 9, 2, 6)
+max(values)
+```
+
+Take 1000 vectors of 50 random numbers, and record the maximum for each
+vector.  Do a histogram of the result:
+
+```{r}
+# A vector of 1000 zeros
+max_of_50 <- numeric(1000)
+for ( ... in ...) {
+  ... <- ...
+}
+hist(max_of_50)
+```
+
+Notice that finding the maximum does not involve adding, so the central limit theorem does not apply.
+
+What distribution do you think you will get from the *median* of 50 random numbers?  You can use the `median` function to get the median value from a vector:
+
+```{r}
+# Make a vector of 1000 zeros
+...
+for ( ... ) {
+  # Calculate median and insert into vector
+   ... <- ...
+}
+hist(...)
+```
+
+As you see in the chunk below, you start with the vector `v <- c(3, 1, 4, 1, 5)`.  Your job is to use a `for` loop to change `v` so the first element (`v[1]`) is 3 * 1, the second element (`v[2]`) is 3 * 2, the third is 4 * 3, the fourth is 1 * 4 and the fifth is 5 * 5.
+
+```{r}
+v <- c(3, 1, 4, 1, 5)
+for ( ... in ... ) {
+  # The body of the loop
+  v[...] <- ...
+}
+# Show the result
+v
+```
+
+The `for` loop above is just for practice.  You would usually do the same thing by multiplying vectors, like this:
+
+```{r}
+v <- c(3, 1, 4, 1, 5)
+# Elementwise multiplication
+v * 1:5
+```
+
+Make sure you understand why this is the same.
